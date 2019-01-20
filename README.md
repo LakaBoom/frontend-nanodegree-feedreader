@@ -3,7 +3,7 @@
 This is a web-based application project that reads RSS feeds. Used gulp(CLI version 2.0.1, Local version 4.0.0) to generate *dist* files and applied `gulp-sass`, `gulp-autoprefixer`, `browser-sync`, `gulp-concat`, `gulp-uglify`, `gulp-babel` and `gulp-jasmine-phantom tools`.
 All the original files are stored in the *src* directory, and production code are in the *dist* directory.
 
-#Installation
+# Installation
 ```
 npm install --save-dev gulp gulp-sass gulp-autoprefixer browser-sync gulp-concat gulp-uglify gulp-babel gulp-jasmine-phantom
 
