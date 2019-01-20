@@ -62,9 +62,9 @@ gulp.task('dist', gulp.series('copy-html',
     'script-dist'
 ));
 
-gulp.task('default', gulp.parallel('copy-html','copy-jasmine','styles',function(done){
-	gulp.watch('./src/sass/**/*.scss',gulp.parallel('styles'));
+gulp.task('default', gulp.parallel('dist','copy-html','copy-jasmine','styles',function(done){
 	gulp.watch('./src/index.html', gulp.parallel('copy-html'));
+	gulp.watch('./src/sass/**/*.scss',gulp.parallel('styles'));
   gulp.watch('./src/jasmine/spec/feedreader.js', gulp.parallel('copy-jasmine'))
 	gulp.watch('./src/index.html').on('change', browserSync.reload);
 	browserSync.init({
