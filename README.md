@@ -14,7 +14,7 @@ To fix the error, direct to file `node_modules/gulp-jasmine-phantom/index.js`, c
 # Implementation
 
 ### 1. RSS feeds
-    - Test `allFeeds` object is defined.
+   - Test `allFeeds` object is defined.
    - Used `forEach` to loops through each feed in the `allFeeds` object and ensures it has a URL defined by using `.toBeDefined()` match _and_ that the URL is not empty by  using the length `.not.toBe(0)` match as well as it has a name defined _and_ that the name is not empty.
 
 ### 2. The menu
