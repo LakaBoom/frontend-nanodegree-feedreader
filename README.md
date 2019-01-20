@@ -9,33 +9,33 @@ npm install --save-dev gulp gulp-sass gulp-autoprefixer browser-sync gulp-concat
 
 ```
 There will be an error called **TypeError [ERR_INVALID_CALLBACK]: Callback must be a function** when running Jasmine with PhantomJs.
-Direct to file `node_modules/gulp-jasmine-phantom/index.js`. In function `cleanup(path)` change `fs.unlink(path)` to  `fs.unlinkSync(path)` will fix the error.
+To fix the error, direct to file `node_modules/gulp-jasmine-phantom/index.js`, change `fs.unlink(path)` to  `fs.unlinkSync(path)` in function `cleanup(path)`.
 
 # Implementation
 
-## 1. RSS feeds
+### 1. RSS feeds
     - Test `allFeeds` object is defined.
-    - Used `forEach` to loops through each feed in the `allFeeds` object and ensures it has a URL defined by using `.toBeDefined()` match _and_ that the URL is not empty by  using the length `.not.toBe(0)` match as well as it has a name defined _and_ that the name is not empty.
+   - Used `forEach` to loops through each feed in the `allFeeds` object and ensures it has a URL defined by using `.toBeDefined()` match _and_ that the URL is not empty by  using the length `.not.toBe(0)` match as well as it has a name defined _and_ that the name is not empty.
 
-## 2. The menu
-    - Ensure the menu element is hidden by default.
-      - Used `.toBeTruthy()`match to verify the tag `body` has class    named `menu-hidden`.
-      - By using match `.toBeLessThan(0)` to make sure the style `transform` applied on class `.menu-hidden .slide-menu` has a negative parameter
-    - Ensures the menu changes visibility when the menu icon is clicked.
-      - Use function `.click()` to simulate mouse click.
-      - Click class `menu-icon-link` first, use `.toBe(false)` match to verify that the `body` does not have class `menu-hidden`, and click again, make sure expect `.toBe(true)` runs success.
+### 2. The menu
+   - Ensure the menu element is hidden by default.
+     - Used `.toBeTruthy()`match to verify the tag `body` has class    named `menu-hidden`.
+     - By using match `.toBeLessThan(0)` to make sure the style `transform` applied on class `.menu-hidden .slide-menu` has a negative parameter
+   - Ensures the menu changes visibility when the menu icon is clicked.
+     - Use function `.click()` to simulate mouse click.
+     - Click class `menu-icon-link` first, use `.toBe(false)` match to verify that the `body` does not have class `menu-hidden`, and click again, make sure expect `.toBe(true)` runs success.
 
-## 3. Initial Entries
-    -  Ensures when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container.
-      - Since `loadFeed()` function is asynchronous,  use of Jasmine's `beforeEach()` and asynchronous `done()` function to load initial feeds first, and verify the length of `feed` class's children `toBeGreaterThan(0)`.
-      - As well as make sure in each child, the class `entry-link` is defined.
+### 3. Initial Entries
+   -  Ensures when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container.
+     - Since `loadFeed()` function is asynchronous,  use of Jasmine's `beforeEach()` and asynchronous `done()` function to load initial feeds first, and verify the length of `feed` class's children `toBeGreaterThan(0)`.
+     - As well as make sure in each child, the class `entry-link` is defined.
 
-## 4. New Feed Selection
-    - Ensures when a new feed is loaded by the `loadFeed` function that the content actually changes.
-      - In `beforeEach()` function, load initial page first and store the `header-title` and all the `entry-link` subclass that in the `feed` to global variables. Secondly, Load a new feed and call `done()` function.
-      - Compare current `header-title` content and previous stored one by using `.not.toBe()` match.
-      - Compare current children content in  class `feed` and previous stored one by using same match.
-      - Call `afterAll()` function to load initial page back.
+### 4. New Feed Selection
+   - Ensures when a new feed is loaded by the `loadFeed` function that the content actually changes.
+     - In `beforeEach()` function, load initial page first and store the `header-title` and all the `entry-link` subclass that in the `feed` to global variables. Secondly, Load a new feed and call `done()` function.
+     - Compare current `header-title` content and previous stored one by using `.not.toBe()` match.
+     - Compare current children content in  class `feed` and previous stored one by using same match.
+     - Call `afterAll()` function to load initial page back.
 
 # Task List
 
@@ -47,4 +47,4 @@ Direct to file `node_modules/gulp-jasmine-phantom/index.js`. In function `cleanu
 # Contributing
 
 This repository is the starter code for _all_ Udacity students.
-Testing is completed by Xuelian Li.
+Testing is completed by _Xuelian Li_.
