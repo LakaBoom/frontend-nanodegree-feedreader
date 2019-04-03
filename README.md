@@ -3,6 +3,10 @@
 This is a web-based application project that reads RSS feeds. Used gulp(CLI version 2.0.1, Local version 4.0.0) to generate *dist* files and applied `gulp-sass`, `gulp-autoprefixer`, `browser-sync`, `gulp-concat`, `gulp-uglify`, `gulp-babel` and `gulp-jasmine-phantom tools`.
 All the original files are stored in the *src* directory, and production code are in the *dist* directory.
 
+# Demo Website
+
+  https://lakaboom.github.io/frontend-nanodegree-feedreader/
+
 # Installation
 ```
 npm install --save-dev gulp gulp-sass gulp-autoprefixer browser-sync gulp-concat gulp-uglify gulp-babel gulp-jasmine-phantom
@@ -43,6 +47,12 @@ To fix the error, direct to file `node_modules/gulp-jasmine-phantom/index.js`, c
     - [x] Callbacks should be used to ensure that feeds are loaded before they are tested
     - [x] Error handling should be implemented for undefined variables and out-of-bound array access
     - [x] When complete, all of your tests should pass
+
+# Reference
+  - To fix the problem :
+    Mixed Content: The page at 'https://lakaboom.github.io/frontend-nanodegree-feedreader/' was loaded over HTTPS, but requested an insecure script 'http://google.com/jsapi'. This request has been blocked; the content must be served over HTTPS.
+  - Solution:
+    https://stackoverflow.com/questions/44667348/javascript-google-transliterate-api-not-served-over-https
 
 # Contributing
 
